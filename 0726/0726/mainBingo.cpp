@@ -30,6 +30,7 @@ int main()
         if (BingoCount >= 5)
         {
             std::cout << std::endl << "빙고를 완성하였습니다.\n";
+            std::cout << std::endl << "축하합니다!!\n";
             break;
         }
 
