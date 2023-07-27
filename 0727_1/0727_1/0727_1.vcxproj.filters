@@ -16,6 +16,12 @@
     <ClCompile Include="main4.cpp">
       <Filter>소스파일</Filter>
     </ClCompile>
+    <ClCompile Include="main5.cpp">
+      <Filter>소스파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemEditor.cpp">
+      <Filter>소스파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="소스파일">
@@ -24,5 +30,13 @@
     <Filter Include="헤더파일">
       <UniqueIdentifier>{826e09d7-3311-4ce6-bd83-1963ec291def}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Info.h">
+      <Filter>헤더파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemEditor.h">
+      <Filter>헤더파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
