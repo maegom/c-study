@@ -1,48 +1,56 @@
 #include <iostream>
-/*
-	1. 포인터 변수는 일단 nullptr 로 초기화한다.
-	2. 동적할당 하려면 일단 delete부터 해놓고 시작하자.
-	단, 포인터 변수에 메모리가 있을 경우를 예외처리한다.
 
-	*/
+//파일 입출력
 int main()
 {
-	//동적할당 
+	// 파일 주소 저장
+	FILE* FileStream = nullptr;
 
-	int* Number = new int;
+	// 파일 불러오기(쓰기*, 읽기, 업뎃)
+	fopen_s(&FileStream, "Test.txt", "wt");
+	//(주소      , "파일명" , "모드");
+/* 모드는 2가지 조합이다.
 
-	*Number = 101010;
+1번 글자
+w : 파일을 새로 만들어줄때
+r : 기존 파일을 읽어올때
+a : 기존 파일을 읽어와서 그 뒤에 내용을 추가해줄 때
 
-	std::cout << "Number1 : " << *Number << std::endl; // = 101010
-	std::cout << "Number2 : " << Number << std::endl;  // = 메모리 주소
+2번 글자
+t : 텍스트 파일
+b : 바이너리 파일
+*/
 
-	if (Number)
+	if (FileStream)
 	{
-		delete Number; //메모리 제거
-		Number = nullptr; //메모리 초기화
+		// 파일에 문자를 추가할때
+		// fputc : 문자 하나를 추가할 때
+		// fputs : 문자열을 추가할 때
+		fputs("문자열 추가\n", FileStream);
+		fputc('T', FileStream);
 
+		// 작업이 완료된 파일 스트림은 무조건 닫아줘야 한다.
+		fclose(FileStream);
 	}
-	if (Number)
-		std::cout << "Number3 : " << *Number << std::endl; //댕글링 포인터
 
-	std::cout << "Number4 : " << Number << std::endl;  //0000000000000000
+	// 파일 불러오기(쓰기, 읽기*, 업뎃)
+	fopen_s(&FileStream, "Test.txt", "rt");
 
+	if (FileStream)
+	{
+		// 파일에 문자를 추가할때
+		// fgetc : 문자 하나를 읽어올 때
+		// fgets : 문자열을 읽어올 때 한 줄을 읽어온다.
+		char	Text[256] = {};
+		fgets(Text, 256, FileStream);
+
+		std::cout << Text;
+
+		char Text1 = fgetc(FileStream);
+
+		std::cout << Text1 << std::endl;
+
+		fclose(FileStream);
+	}
 	return 0;
 }
-/*
-메모리 단편화
--내부 단편화 : 어떤 프로그램이 1mbyte 메모리를 사용하는데 os는 실제 이 프로그램이 동작될 때 4mbyte의 공간을 할당해주었다.
-이때 3mbyte는 사용하지 않는 메모리 이므로 단편화가 3mbyte 만큼 발생한 것이다.
--외부 단편화 : 메모리 할당과 해제가 반복될 떄 실제 생성된 메모리들이 연속된 메모밀 공간에 차례대로 할당되는 것이 아니기 때문에
-중간중강 할당된 메모리들 사이에 공간이 비어있을 수 있다. 실제 큰 공간이 아니라도 이런 비어있는 공간이 많을 경우 메모리의 비어있는 총 크기는 클수 있다.
-이때 큰 메모리 공간이 필요할 때 실제 메모리는 그 만큼 비어있지만 연속된 메모리 공간이 없어서 할당이 불가능한 상태를 말한다.
-
-메모리 단편화 해결법
-1. 페이징 기법 : 가상 메모리를 사용해서 외부단편화 해결, 내부 단편화는 존재한다.
-
-2. 세그멘테이션 기법 :가상 메모리 사용, 내부 단편화 해설, 일부 단편화는 존재한다.
-
-3. 메모리 풀 기법 :필요한 메모리 공간을 필요한 크기, 개수 만큼 미리 할당받아 놓고 필요할 때 마다 사용하고 반납하는 기법
-
-
-*/
