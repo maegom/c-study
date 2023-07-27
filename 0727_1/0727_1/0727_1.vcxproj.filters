@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>소스파일</Filter>
+    </ClCompile>
+    <ClCompile Include="main1.cpp">
+      <Filter>소스파일</Filter>
+    </ClCompile>
+    <ClCompile Include="main2.cpp">
+      <Filter>소스파일</Filter>
+    </ClCompile>
+    <ClCompile Include="main3.cpp">
+      <Filter>소스파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="소스파일">
+      <UniqueIdentifier>{385bcc93-e81e-4b85-a0f5-602142d5b0e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더파일">
+      <UniqueIdentifier>{826e09d7-3311-4ce6-bd83-1963ec291def}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
