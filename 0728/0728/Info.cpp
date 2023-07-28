@@ -1,8 +1,12 @@
 #include "Info.h"
 
+
+//아이템 출력 
 int OutputItemList(const ItemArray* Array)
 {
-	system("cls");
+	system("cls"); //화면 정리 
+
+	//개수만큼 이름 , 무기 종류, 가격 출력
 	for (int i = 0; i < Array->Count; ++i)
 	{
 		std::cout << i + 1 << ". 이름 : " << Array->ItemList[i]->Name << "\t종류 : ";
@@ -20,9 +24,12 @@ int OutputItemList(const ItemArray* Array)
 		std::cout << "Price : " << Array->ItemList[i]->Price << "\tSell : "
 			<< Array->ItemList[i]->Sell << std::endl;
 	}
-
+	
+	//가방속 아이템 개수 +1 번째에 뒤로가기 
 	std::cout << Array->Count + 1 << ". 뒤로가기" << std::endl;
 	std::cout << "아이템을 선택하세요 : ";
+
+	//입력 받아 행동 취할 수 있게
 	int	Input;
 	std::cin >> Input;
 

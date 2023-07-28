@@ -1,9 +1,12 @@
 #include "Store.h"
 
+//상점 초기화
 bool StoreInit(ItemArray* store)
 {
+	//파일 입력 받을 초기화
 	FILE* FileStream = nullptr;
 
+	//파일 입력
 	fopen_s(&FileStream, "ItemList.itl", "rb");
 
 	if (!FileStream)
@@ -12,8 +15,9 @@ bool StoreInit(ItemArray* store)
 	// (*store).
 	// store->
 	// 위의 2개의 접근방법은 같은 접근방법이다.
-	fread(&store->Count, sizeof(int), 1, FileStream);
+	fread(&store->Count, sizeof(int), 1, FileStream); //아이템 개수 입력
 
+	//아이템 개수만큼 아이템 정보 입력
 	for (int i = 0; i < store->Count; ++i)
 	{
 		Item	item = {};
@@ -25,6 +29,7 @@ bool StoreInit(ItemArray* store)
 		// 위에서 파일로부터 읽어온 정보를 실제 사용할 아이템의 메모리에 복사해준다.
 		memcpy(StoreItem, &item, sizeof(Item));
 
+		//상점 아이템 리스트에 아이템 저장
 		store->ItemList[i] = StoreItem;
 	}
 	//fread(store->ItemList, sizeof(Item), store->Count, FileStream);
@@ -34,6 +39,7 @@ bool StoreInit(ItemArray* store)
     return true;
 }
 
+//상점 실행
 void StoreRun(ItemArray* store, ItemArray* Inventory, Player* player)
 {
 	while (true)
@@ -67,13 +73,15 @@ void StoreRun(ItemArray* store, ItemArray* Inventory, Player* player)
 		// 인벤토리에 아이템을 추가해준다.
 		Item* InvenItem = new Item;
 
-		int Size = sizeof(Item);
+		//int Size = sizeof(Item);
 
 		memcpy(InvenItem, store->ItemList[ItemIndex], sizeof(Item));
 
+		//인벤토리 맨뒤에 저장
 		Inventory->ItemList[Inventory->Count] = InvenItem;
 		++Inventory->Count;
 
+		//돈 차감
 		player->Money -= InvenItem->Price;
 	}
 }

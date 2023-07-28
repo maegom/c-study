@@ -2,6 +2,7 @@
 #include "Store.h"
 #include "Inventory.h"
 
+//게임 초기화 구현
 bool GameInit(ItemArray* store, ItemArray* Inventory, Player* player)
 {
 	// 상점 초기화
@@ -18,6 +19,7 @@ bool GameInit(ItemArray* store, ItemArray* Inventory, Player* player)
     return true;
 }
 
+//메뉴 
 EMainMenu Menu()
 {
 	system("cls");
@@ -26,6 +28,8 @@ EMainMenu Menu()
 	std::cout << "3. 가방" << std::endl;
 	std::cout << "4. 종료" << std::endl;
 	std::cout << "메뉴를 선택하세요 : ";
+
+	//입력과 예외처리
 	int	Input;
 
 	std::cin >> Input;
@@ -36,26 +40,28 @@ EMainMenu Menu()
 	return (EMainMenu)Input;
 }
 
+//동작
 void Run(ItemArray* store, ItemArray* Inventory, Player* player)
 {
 	while (true)
-	{
+	{ 
 		switch (Menu())
 		{
 		case EMainMenu::Battle:
 			break;
-		case EMainMenu::Store:
+		case EMainMenu::Store:  //상점
 			StoreRun(store, Inventory, player);
 			break;
-		case EMainMenu::Inventory:
+		case EMainMenu::Inventory://인벤토리
 			InventoryRun(Inventory, player);
 			break;
-		case EMainMenu::Exit:
+		case EMainMenu::Exit: //종료
 			return;
 		}
 	}
 }
 
+//동적할당 제거
 void Destroy(ItemArray* store, ItemArray* Inventory, Player* player)
 {
 	for (int i = 0; i < store->Count; ++i)
