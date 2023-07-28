@@ -44,8 +44,10 @@ int main()
 			CreateItem(item, Count);
 			break;
 		case EMainMenu::DeleteItem:
+			DeleteItem(item, Count);
 			break;
 		case EMainMenu::ModifyItem:
+			ModifyItem(item, Count);
 			break;
 		case EMainMenu::OutputItem:
 			OutputItemList(item, Count);
