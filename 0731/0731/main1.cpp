@@ -1,35 +1,13 @@
-#include <iostream>
 
-class CGameManager
-{
-public:
-	CGameManager();
-	~CGameManager();
-
-private:
-
-public:
-	void init()
-	{
-
-	}
-	void Run()
-	{
-
-	}
-
-};
-
-CGameManager::CGameManager()
-{
-}
-
-CGameManager::~CGameManager()
-{
-}
+#include "GameManager.h"
 
 int main()
 {
-	CGameManager Mgr;
+	CGameManager	Mgr;
+
+	Mgr.Init();
+
+	Mgr.Run();
+
 	return 0;
 }
