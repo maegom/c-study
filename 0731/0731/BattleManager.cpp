@@ -20,7 +20,7 @@ EBattleMenu CBattleManager::Menu()
 
 	std::cin >> Input;
 
-	if (Input <= (int)EBattleMenu::None || 
+	if (Input <= (int)EBattleMenu::None ||
 		Input > (int)EBattleMenu::Back)
 		return EBattleMenu::None;
 

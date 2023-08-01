@@ -1,6 +1,6 @@
 #include "GameManager.h"
 
-CGameManager::CGameManager()	:
+CGameManager::CGameManager() :
 	mBattleMgr(nullptr)
 {
 }
