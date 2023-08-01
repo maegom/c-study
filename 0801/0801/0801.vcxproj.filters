@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="main1.cpp" />
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>03.ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>03.ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>03.ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Battle.cpp">
+      <Filter>02.Battle</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleManager.cpp">
+      <Filter>02.Battle</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>01.GameManager</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Info.h" />
+    <ClInclude Include="Player.h">
+      <Filter>03.ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>03.ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>03.ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Battle.h">
+      <Filter>02.Battle</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleManager.h">
+      <Filter>02.Battle</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>01.GameManager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="01.GameManager">
+      <UniqueIdentifier>{6bc506a8-f4da-4727-96f2-96b8dbdd7f31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Battle">
+      <UniqueIdentifier>{d6173b86-7d96-437f-a955-399ad036bf2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.ObjectManager">
+      <UniqueIdentifier>{df1da134-b53c-4567-a238-1c4f5fea8e95}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
