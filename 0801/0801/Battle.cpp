@@ -26,6 +26,5 @@ void CBattle::Run()
 
 	while (true)
 	{
-
 	}
 }
