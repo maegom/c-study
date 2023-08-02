@@ -102,6 +102,7 @@ void CBattle::Run()
 			}
 			break;
 		case EBattleMenu::Back:
+			delete Monster;
 			return;
 		}
 	}

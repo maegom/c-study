@@ -1,3 +1,4 @@
+
 #include "GameManager.h"
 
 int main()
@@ -11,11 +12,7 @@ int main()
 	CGameManager::GetInst()->Run();
 
 	CGameManager::DestroyInst();
-	/*CGameManager	Mgr;
-
-	Mgr.Init();
-
-	Mgr.Run();*/
 
 	return 0;
 }
+

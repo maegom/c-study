@@ -41,6 +41,11 @@ public:
 		return mArmor;
 	}
 
+	int GetMoney()
+	{
+		return mMoney;
+	}
+
 	bool Damage(int Dmg)
 	{
 		mHP -= Dmg;

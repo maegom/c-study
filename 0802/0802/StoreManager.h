@@ -2,30 +2,29 @@
 
 #include "Info.h"
 
-enum class EMainMenu
+enum class EStoreMenu
 {
 	None,
-	Battle,
-	Store,
-	Inventory,
-	Exit
+	Weapon,
+	Armor,
+	Back
 };
 
-class CGameManager
+class CStoreManager
 {
 private:
-	CGameManager();
-	~CGameManager();
+	CStoreManager();
+	~CStoreManager();
 
 private:
-	static CGameManager* mInst;
+	static CStoreManager* mInst;
 
 public:
-	static CGameManager* GetInst()
+	static CStoreManager* GetInst()
 	{
 		if (nullptr == mInst)
-			mInst = new CGameManager;
-		
+			mInst = new CStoreManager;
+
 		return mInst;
 	}
 
@@ -39,7 +38,11 @@ public:
 	}
 
 private:
-	EMainMenu Menu();
+	class CStore* mStore[2];
+
+
+private:
+	EStoreMenu Menu();
 
 public:
 	bool Init();

@@ -2,17 +2,26 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main1.cpp" />
-    <ClCompile Include="GameManager.cpp">
-      <Filter>01.GameManager</Filter>
-    </ClCompile>
     <ClCompile Include="Battle.cpp">
       <Filter>02.Battle</Filter>
     </ClCompile>
     <ClCompile Include="BattleManager.cpp">
       <Filter>02.Battle</Filter>
     </ClCompile>
-    <ClCompile Include="Monster.cpp">
-      <Filter>03.Object</Filter>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>01.BattleManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>05.Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>04.Store</Filter>
+    </ClCompile>
+    <ClCompile Include="Store.cpp">
+      <Filter>04.Store</Filter>
+    </ClCompile>
+    <ClCompile Include="StoreManager.cpp">
+      <Filter>04.Store</Filter>
     </ClCompile>
     <ClCompile Include="ObjectManager.cpp">
       <Filter>03.Object</Filter>
@@ -20,37 +29,58 @@
     <ClCompile Include="Player.cpp">
       <Filter>03.Object</Filter>
     </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>03.Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Info.h" />
-    <ClInclude Include="GameManager.h">
-      <Filter>01.GameManager</Filter>
-    </ClInclude>
     <ClInclude Include="Battle.h">
       <Filter>02.Battle</Filter>
     </ClInclude>
     <ClInclude Include="BattleManager.h">
       <Filter>02.Battle</Filter>
     </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>01.BattleManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Inventory.h">
+      <Filter>05.Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>04.Store</Filter>
+    </ClInclude>
     <ClInclude Include="Monster.h">
+      <Filter>03.Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Store.h">
+      <Filter>04.Store</Filter>
+    </ClInclude>
+    <ClInclude Include="StoreManager.h">
+      <Filter>04.Store</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
       <Filter>03.Object</Filter>
     </ClInclude>
     <ClInclude Include="ObjectManager.h">
       <Filter>03.Object</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>03.Object</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="01.GameManager">
-      <UniqueIdentifier>{86836fc3-fa7d-4d6a-b693-11d425aa1166}</UniqueIdentifier>
+    <Filter Include="01.BattleManager">
+      <UniqueIdentifier>{add44e75-8c77-4245-aae7-a2c34b76b0a2}</UniqueIdentifier>
     </Filter>
     <Filter Include="02.Battle">
-      <UniqueIdentifier>{4c3f4224-ff44-4a78-bd56-70940a230871}</UniqueIdentifier>
+      <UniqueIdentifier>{53803b48-6357-46c0-830c-4f368be7c187}</UniqueIdentifier>
     </Filter>
     <Filter Include="03.Object">
-      <UniqueIdentifier>{da6c92a1-62d0-46a3-8ee7-d5b0a9894cee}</UniqueIdentifier>
+      <UniqueIdentifier>{e02eb164-2516-46e3-a8b4-14f6ca1a0eeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04.Store">
+      <UniqueIdentifier>{54aa0c8f-1a15-4f24-8ec9-629e76f02a5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05.Inventory">
+      <UniqueIdentifier>{9680cbec-35d2-4d0f-ba79-bfeb7f8a6117}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -1,6 +1,8 @@
 #include "GameManager.h"
 #include "BattleManager.h"
 #include "ObjectManager.h"
+#include "StoreManager.h"
+#include "Inventory.h"
 
 CGameManager* CGameManager::mInst = nullptr;
 
@@ -10,6 +12,8 @@ CGameManager::CGameManager()
 
 CGameManager::~CGameManager()
 {
+	CInventory::DestroyInst();
+	CStoreManager::DestroyInst();
 	CObjectManager::DestroyInst();
 	CBattleManager::DestroyInst();
 }
@@ -42,6 +46,14 @@ bool CGameManager::Init()
 	if (!CBattleManager::GetInst()->Init())
 		return false;
 
+	// 상점 관리자 초기화
+	if (!CStoreManager::GetInst()->Init())
+		return false;
+
+	// 인벤토리 초기화
+	if (!CInventory::GetInst()->Init())
+		return false;
+
 	return true;
 }
 
@@ -55,8 +67,10 @@ void CGameManager::Run()
 			CBattleManager::GetInst()->Run();
 			break;
 		case EMainMenu::Store:
+			CStoreManager::GetInst()->Run();
 			break;
 		case EMainMenu::Inventory:
+			CInventory::GetInst()->Run();
 			break;
 		case EMainMenu::Exit:
 			return;
