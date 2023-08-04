@@ -1,4 +1,5 @@
 #include <iostream>
+#include "LinkedList.h"
 
 /*
 linked list
@@ -16,10 +17,24 @@ double linked list : 다음노드 , 이전노드 둘다 저장
 접근은 배열이 빠름 
 
 */
-
 int main()
 {
+	CLinkedList<int>	IntList;
 
+	for (int i = 0; i < 10; ++i)
+	{
+		IntList.push_back(i);
+	}
+
+	IntList.erase(5);
+
+	CLinkedList<int>::iterator	iter;
+	CLinkedList<int>::iterator	iterEnd = IntList.end();
+
+	for (iter = IntList.begin(); iter != iterEnd; ++iter)
+	{
+		std::cout << *iter << std::endl;
+	}
 
 	return 0;
 }
