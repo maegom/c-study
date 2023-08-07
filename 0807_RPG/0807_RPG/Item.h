@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Info.h"
+#include "Object.h"
 
 enum class EItemType
 {
@@ -8,7 +8,8 @@ enum class EItemType
 	Armor
 };
 
-class CItem
+class CItem :
+	public CObject
 {
 public:
 	CItem();
@@ -28,10 +29,9 @@ public:
 	일반 값들은 얕은복사와 같이 복사한다.
 	*/
 	CItem(const CItem& ref);
-	~CItem();
+	virtual ~CItem();
 
-private:
-	char		mName[32];
+protected:
 	EItemType	mType;
 	EEquipType	mEquipType;
 	int			mOption;
@@ -62,7 +62,8 @@ public:
 public:
 	bool Init(const char* Name, EItemType Type, int Price, int Sell,
 		EEquipType EquipType = Equip_None);
-	bool Init(FILE* FileStream);
-	void Output();
+	virtual bool Init(FILE* FileStream);
+	virtual bool Init();
+	virtual void Output();
 };
 

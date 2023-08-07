@@ -1,7 +1,6 @@
 #include "Item.h"
 
 CItem::CItem()  :
-    mName{},
     mType(EItemType::Weapon),
     mPrice(0),
     mSell(0),
@@ -32,7 +31,6 @@ bool CItem::Init(const char* Name, EItemType Type, int Price, int Sell,
 bool CItem::Init(FILE* FileStream)
 {
     fread(mName, sizeof(char), 32, FileStream);
-    fread(&mType, sizeof(EItemType), 1, FileStream);
 
 	fread(&mEquipType, sizeof(EEquipType), 1, FileStream);
 	fread(&mOption, sizeof(int), 1, FileStream);
@@ -41,6 +39,11 @@ bool CItem::Init(FILE* FileStream)
     fread(&mSell, sizeof(int), 1, FileStream);
 
     return true;
+}
+
+bool CItem::Init()
+{
+	return true;
 }
 
 void CItem::Output()

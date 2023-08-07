@@ -1,15 +1,15 @@
 #pragma once
 
-#include "Info.h"
+#include "Object.h"
 
-class CCharacter
+class CCharacter	:
+	public CObject
 {
 public:
 	CCharacter();
 	virtual ~CCharacter();
 
 protected:
-	char	mName[32];
 	int		mAttack;
 	int		mArmor;
 	int		mHP;

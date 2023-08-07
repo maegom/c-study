@@ -1,8 +1,9 @@
 #include "Store.h"
-#include "Item.h"
 #include "Inventory.h"
 #include "Player.h"
 #include "ObjectManager.h"
+#include "ItemWeapon.h"
+#include "ItemArmor.h"
 
 CStore::CStore()
 {
@@ -56,7 +57,20 @@ bool CStore::Init(const char* FileName)
 	// 위에서 읽어온 아이템의 수량만큼 동적배열로 할당해준다.
 	for (int i = 0; i < Count; ++i)
 	{
-		CItem* Item = new CItem;
+		EItemType	Type;
+		fread(&Type, sizeof(EItemType), 1, FileStream);
+
+		CItem* Item = nullptr;
+
+		switch (Type)
+		{
+		case EItemType::Weapon:
+			Item = new CItemWeapon;
+			break;
+		case EItemType::Armor:
+			Item = new CItemArmor;
+			break;
+		}
 
 		Item->Init(FileStream);
 

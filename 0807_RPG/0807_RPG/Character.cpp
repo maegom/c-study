@@ -1,7 +1,6 @@
 #include "Character.h"
 
 CCharacter::CCharacter() :
-    mName{},
     mAttack(0),
     mArmor(0),
     mHP(0),
