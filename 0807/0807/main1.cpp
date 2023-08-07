@@ -34,6 +34,19 @@
 된다.
 단, 가상함수를 가지고 있는 클래스일 경우 x64에서는 8바이트, x86에서는 4바이트가
 나오게 된다.
+
+순수가상함수 : 가상함수를 자식클래스에서 무조건 재정의하게 만들어주는 기능이다.
+순수가상함수는 일반 가상함수와 다르게 자식클래스에 재정의가 없을 경우
+에러가 발생한다.
+
+순수가상함수를 1개 이상 가지고 있는 클래스를 추상클래스라고 한다.
+이때 자식클래스에서 부모클래스의 순수가상함수를 재정의 하지 않을 경우
+해당 자식클래스도 추상클래스가 된다.
+
+추상클래스는 포인터타입 변수는 선언이 가능하지만 실제 객체는 생성할 수 없는
+클래스이다.
+
+순수가상함수는 함수의 구현부분이 있어도 되고 없어도 된다.
 */
 
 // CParent에 2개의 가상함수가 있다.
@@ -41,21 +54,27 @@
 class CParent
 {
 public:
-    CParent()
-    {
-        std::cout << "CParent 생성자" << std::endl;
-    }
+	CParent()
+	{
+		std::cout << "CParent 생성자" << std::endl;
+	}
 
-    virtual ~CParent()
-    {
-        std::cout << "CParent 소멸자" << std::endl;
-    }
+	virtual ~CParent()
+	{
+		std::cout << "CParent 소멸자" << std::endl;
+	}
 
 public:
-    virtual void Output()
-    {
-        std::cout << "CParent Output Function" << std::endl;
-    }
+	virtual void Output()
+	{
+		std::cout << "CParent Output Function" << std::endl;
+	}
+
+	virtual void OutputPure() = 0;
+	virtual void OutputPure1() = 0
+	{
+		std::cout << "CParent OutputPure1 Function" << std::endl;
+	}
 };
 
 // CChild에 2개의 가상함수가 있다.
@@ -66,21 +85,43 @@ public:
 class CChild : public CParent
 {
 public:
-    CChild()
-    {
-        std::cout << "CChild 생성자" << std::endl;
-    }
+	CChild()
+	{
+		std::cout << "CChild 생성자" << std::endl;
+	}
 
-    virtual ~CChild()
-    {
-        std::cout << "CChild 소멸자" << std::endl;
-    }
+	virtual ~CChild()
+	{
+		std::cout << "CChild 소멸자" << std::endl;
+	}
 
 public:
-    virtual void Output()
-    {
-        std::cout << "CChild Output Function" << std::endl;
-    }
+	/*
+	override : 이 키워드는 멤버함수의 뒤에 붙여줄 수 있는데 부모클래스에 있는
+	함수를 재정의 했는지 판단해준다.
+
+	final : 멤버함수의 뒤에 붙여줄 수 있다. final이 붙으면 이 함수는 더이상
+	자식클래스에서 재정의할 수 없다.
+	*/
+	/*virtual void OutputTest()	override
+	{
+	}*/
+
+	virtual void Output()	override	final
+	{
+		std::cout << "CChild Output Function" << std::endl;
+	}
+
+	// 순수가상함수를 재정의해서 구현할 경우 뒤에 = 0 을 빼준다.
+	virtual void OutputPure()
+	{
+		std::cout << "CChild OutputPure Function" << std::endl;
+	}
+
+	virtual void OutputPure1()
+	{
+		std::cout << "CChild OutputPure1 Function" << std::endl;
+	}
 };
 
 // CChild1에 1개의 가상함수가 있다.
@@ -92,57 +133,74 @@ public:
 class CChild1 : public CParent
 {
 public:
-    CChild1()
-    {
-        std::cout << "CChild1 생성자" << std::endl;
-    }
+	CChild1()
+	{
+		std::cout << "CChild1 생성자" << std::endl;
+	}
 
-    ~CChild1()
-    {
-        std::cout << "CChild1 소멸자" << std::endl;
-    }
+	~CChild1()
+	{
+		std::cout << "CChild1 소멸자" << std::endl;
+	}
+
+public:
+	// 순수가상함수를 재정의해서 구현할 경우 뒤에 = 0 을 빼준다.
+	virtual void OutputPure()
+	{
+		std::cout << "CChild1 OutputPure Function" << std::endl;
+	}
+
+	virtual void OutputPure1()
+	{
+		std::cout << "CChild1 OutputPure1 Function" << std::endl;
+	}
 };
 
 class CChildChild : public CChild
 {
 public:
-    CChildChild()
-    {
-        std::cout << "CChildChild 생성자" << std::endl;
-    }
+	CChildChild()
+	{
+		std::cout << "CChildChild 생성자" << std::endl;
+	}
 
-    ~CChildChild()
-    {
-        std::cout << "CChildChild 소멸자" << std::endl;
-    }
+	~CChildChild()
+	{
+		std::cout << "CChildChild 소멸자" << std::endl;
+	}
 
 public:
-    void Output()
-    {
-        std::cout << "CChildChild Output Function" << std::endl;
-    }
+	/*void Output()
+	{
+		std::cout << "CChildChild Output Function" << std::endl;
+	}*/
 };
 
 int main()
 {
-    //CChild   child;
+	//CChild	child;
 
-    std::cout << "CParent : " << sizeof(CParent) << std::endl;
-    std::cout << "CChild : " << sizeof(CChild) << std::endl;
-    std::cout << "CChild1 : " << sizeof(CChild1) << std::endl;
-    /*CParent* Child = new CChild;
+	std::cout << "CParent : " << sizeof(CParent) << std::endl;
+	std::cout << "CChild : " << sizeof(CChild) << std::endl;
+	std::cout << "CChild1 : " << sizeof(CChild1) << std::endl;
+	/*CParent* Child = new CChild;
 
-    Child->Output();
+	Child->Output();
 
-    delete   Child;*/
-    CParent* ChildArr[3] = {};
-    ChildArr[0] = new CChild;
-    ChildArr[1] = new CChild1;
-    ChildArr[2] = new CChildChild;
-    for (int i = 0; i < 3; ++i)
-    {
-        ChildArr[i]->Output();
-    }
+	delete	Child;*/
+	CParent* ChildArr[3] = {};
+	ChildArr[0] = new CChild;
+	ChildArr[1] = new CChild1;
+	ChildArr[2] = new CChildChild;
+	for (int i = 0; i < 3; ++i)
+	{
+		ChildArr[i]->Output();
+	}
 
-    return 0;
+	for (int i = 0; i < 3; ++i)
+	{
+		delete ChildArr[i];
+	}
+
+	return 0;
 }
