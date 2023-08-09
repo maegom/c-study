@@ -28,6 +28,9 @@
     <Filter Include="03. Object\01. Character">
       <UniqueIdentifier>{6d5bb630-8daf-45ba-8f73-e607b3898755}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Object\02. Bullet">
+      <UniqueIdentifier>{d705a1c8-1af3-4d4d-9168-d8edc5233f26}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -55,6 +58,9 @@
       <Filter>03. Object\01. Character</Filter>
     </ClCompile>
     <ClCompile Include="Object\Character.cpp">
+      <Filter>03. Object\01. Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Monster.cpp">
       <Filter>03. Object\01. Character</Filter>
     </ClCompile>
   </ItemGroup>
@@ -89,15 +95,18 @@
     <ClInclude Include="Object\Player.h">
       <Filter>03. Object\01. Character</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="0808_Framework.rc">
-      <Filter>리소스 파일</Filter>
-    </ResourceCompile>
+    <ClInclude Include="Object\Monster.h">
+      <Filter>03. Object\01. Character</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="icon1.ico">
       <Filter>리소스 파일</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="0808_Framework.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

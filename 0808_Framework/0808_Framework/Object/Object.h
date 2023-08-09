@@ -13,8 +13,16 @@ protected:
 	char		mName[32];
 	Vector2D	mPos;
 	Vector2D	mSize;
+	Vector2D	mMoveDir;
+	float		mMoveSpeed;
+	bool		mActive;
 
 public:
+	bool GetActive()	const
+	{
+		return mActive;
+	}
+
 	const char* GetName()	const
 	{
 		return mName;
@@ -55,6 +63,28 @@ public:
 	void SetName(const char* Name)
 	{
 		strcpy_s(mName, Name);
+	}
+
+	void SetActive(bool Active)
+	{
+		mActive = Active;
+	}
+
+	void SetMoveSpeed(float Speed)
+	{
+		mMoveSpeed = Speed;
+	}
+
+public:
+	void Move(const Vector2D& MoveDir)
+	{
+		mMoveDir = MoveDir;
+	}
+
+	void Move(float x, float y)
+	{
+		mMoveDir.x = x;
+		mMoveDir.y = y;
 	}
 
 public:

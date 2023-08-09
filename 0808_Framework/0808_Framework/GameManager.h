@@ -35,6 +35,12 @@ private:
 	static bool	mLoop;
 
 public:
+	Resolution GetResolution()
+	{
+		return mRS;
+	}
+
+public:
 	bool Init(HINSTANCE hInst);
 	int Run();
 

@@ -133,6 +133,7 @@
     <ClCompile Include="Level\MainLevel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Object\Character.cpp" />
+    <ClCompile Include="Object\Monster.cpp" />
     <ClCompile Include="Object\Object.cpp" />
     <ClCompile Include="Object\Player.cpp" />
     <ClCompile Include="Timer.cpp" />
@@ -144,16 +145,17 @@
     <ClInclude Include="Level\LevelManager.h" />
     <ClInclude Include="Level\MainLevel.h" />
     <ClInclude Include="Object\Character.h" />
+    <ClInclude Include="Object\Monster.h" />
     <ClInclude Include="Object\Object.h" />
     <ClInclude Include="Object\Player.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="0808_Framework.rc" />
+    <Image Include="icon1.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="icon1.ico" />
+    <ResourceCompile Include="0808_Framework.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
