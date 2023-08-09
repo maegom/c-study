@@ -173,9 +173,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             LineTo(hdc, 500, 600);
             MoveToEx(hdc, 500, 300, nullptr);
             LineTo(hdc, 500, 200);
-
-
-
+             
 
             EndPaint(hWnd, &ps);
         }
