@@ -4,6 +4,7 @@
 #include <string>
 #include <list>
 #include <math.h>
+#include <typeinfo>
 
 #define	SAFE_DELETE(p)	if(p)	{ delete p; p = nullptr; }
 

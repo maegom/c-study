@@ -16,8 +16,14 @@ protected:
 	Vector2D	mMoveDir;
 	float		mMoveSpeed;
 	bool		mActive;
+	size_t		mTypeID;
 
 public:
+	size_t GetTypeID()	const
+	{
+		return mTypeID;
+	}
+
 	bool GetActive()	const
 	{
 		return mActive;
@@ -93,5 +99,6 @@ public:
 	virtual void Update(float DeltaTime);
 	virtual void Collision(float DeltaTime);
 	virtual void Render(HDC hDC);
+	virtual void Collision(CObject* Dest);
 };
 

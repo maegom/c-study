@@ -1,8 +1,12 @@
 #include "Bullet.h"
+#include "../GameManager.h"
+#include "GuidedBullet.h"
 
 CBullet::CBullet()	:
 	mDir(0)
 {
+	// CBullet의 고유한 번호를 저장한다.
+	mTypeID = typeid(CBullet).hash_code();
 }
 
 CBullet::CBullet(const CBullet& Obj)	:
@@ -40,6 +44,14 @@ void CBullet::Update(float DeltaTime)
 			SetActive(false);
 		}
 	}
+
+	else if (mDir == 1)
+	{
+		Resolution	RS = CGameManager::GetInst()->GetResolution();
+
+		if (mPos.y >= RS.Height)
+			SetActive(false);
+	}
 }
 
 void CBullet::Collision(float DeltaTime)
@@ -50,4 +62,13 @@ void CBullet::Collision(float DeltaTime)
 void CBullet::Render(HDC hDC)
 {
 	CObject::Render(hDC);
+}
+
+void CBullet::Collision(CObject* Dest)
+{
+	if (Dest->GetTypeID() == typeid(CBullet).hash_code() ||
+		Dest->GetTypeID() == typeid(CGuidedBullet).hash_code())
+		return;
+
+	SetActive(false);
 }

@@ -12,6 +12,9 @@ protected:
 	std::list<class CObject*>	mObjList;
 
 public:
+	class CObject* FindObject(const char* Name);
+
+public:
 	virtual void Init();
 	virtual void Input(float DeltaTime);
 	virtual void Update(float DeltaTime);

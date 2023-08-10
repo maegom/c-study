@@ -5,6 +5,8 @@
 
 CPlayer::CPlayer()
 {
+	// CBullet의 고유한 번호를 저장한다.
+	mTypeID = typeid(CPlayer).hash_code();
 }
 
 CPlayer::CPlayer(const CPlayer& Obj)	:
@@ -90,4 +92,9 @@ void CPlayer::Collision(float DeltaTime)
 void CPlayer::Render(HDC hDC)
 {
 	CCharacter::Render(hDC);
+}
+
+void CPlayer::Collision(CObject* Dest)
+{
+	SetActive(false);
 }
