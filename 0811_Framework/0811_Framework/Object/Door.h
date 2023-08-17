@@ -1,16 +1,12 @@
 #pragma once
-
-#include "Character.h"
-
-class CMonster :
-    public CCharacter
+#include "Object.h"
+class CDoor :
+    public CObject
 {
 public:
-	CMonster();
-	CMonster(const CMonster& Obj);
-	virtual ~CMonster();
-
-private:
+	CDoor();
+	CDoor(const CDoor& Obj);
+	virtual ~CDoor();
 
 public:
 	virtual void Init();

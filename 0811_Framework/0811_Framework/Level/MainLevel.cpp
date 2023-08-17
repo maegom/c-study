@@ -1,6 +1,6 @@
 #include "MainLevel.h"
-#include "../Object/Player.h"
-#include "../Object/Monster.h"
+#include "../Object/MainPlayer.h"
+#include "../Object/MainMonster.h"
 
 CMainLevel::CMainLevel()	:
 	mScore(0)
@@ -15,8 +15,8 @@ void CMainLevel::Init()
 {
 	CLevel::Init();
 
-	CreateObj<CPlayer>("Player", Vector2D(300.f, 500.f));
-	CreateObj<CMonster>("Monster", Vector2D(500.f, 50.f), Vector2D(50.f, 50.f));
+	CreateObj<CMainPlayer>("Player", Vector2D(300.f, 500.f));
+	CreateObj<CMainMonster>("Monster", Vector2D(500.f, 50.f), Vector2D(50.f, 50.f));
 }
 
 void CMainLevel::Render(HDC hDC)

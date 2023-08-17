@@ -100,5 +100,13 @@ public:
 	virtual void Collision(float DeltaTime);
 	virtual void Render(HDC hDC);
 	virtual void Collision(CObject* Dest);
+
+
+public:
+	template <typename T>
+	bool CheckType()
+	{
+		return mTypeID == typeid(T).hash_code();
+	}
 };
 

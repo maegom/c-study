@@ -31,6 +31,15 @@
     <Filter Include="03. Object\02. Bullet">
       <UniqueIdentifier>{d705a1c8-1af3-4d4d-9168-d8edc5233f26}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Object\01. Character\01. Player">
+      <UniqueIdentifier>{14bd2f46-aa22-403b-b4fc-8dc1f6b0bc18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Object\01. Character\02. Monster">
+      <UniqueIdentifier>{2072356f-c342-4e03-ba63-b61d744a5c00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Object\03. Door">
+      <UniqueIdentifier>{6da1815b-45e2-4e75-bf86-457423352826}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -54,13 +63,7 @@
     <ClCompile Include="Object\Object.cpp">
       <Filter>03. Object</Filter>
     </ClCompile>
-    <ClCompile Include="Object\Player.cpp">
-      <Filter>03. Object\01. Character</Filter>
-    </ClCompile>
     <ClCompile Include="Object\Character.cpp">
-      <Filter>03. Object\01. Character</Filter>
-    </ClCompile>
-    <ClCompile Include="Object\Monster.cpp">
       <Filter>03. Object\01. Character</Filter>
     </ClCompile>
     <ClCompile Include="Object\Bullet.cpp">
@@ -68,6 +71,30 @@
     </ClCompile>
     <ClCompile Include="Object\GuidedBullet.cpp">
       <Filter>03. Object\02. Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Level\GameLevel.cpp">
+      <Filter>02. Level</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\GamePlayer.cpp">
+      <Filter>03. Object\01. Character\01. Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\MainPlayer.cpp">
+      <Filter>03. Object\01. Character\01. Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Player.cpp">
+      <Filter>03. Object\01. Character\01. Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Monster.cpp">
+      <Filter>03. Object\01. Character\02. Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\MainMonster.cpp">
+      <Filter>03. Object\01. Character\02. Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\GameMonster.cpp">
+      <Filter>03. Object\01. Character\02. Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Door.cpp">
+      <Filter>03. Object\03. Door</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -98,17 +125,35 @@
     <ClInclude Include="Object\Character.h">
       <Filter>03. Object\01. Character</Filter>
     </ClInclude>
-    <ClInclude Include="Object\Player.h">
-      <Filter>03. Object\01. Character</Filter>
-    </ClInclude>
-    <ClInclude Include="Object\Monster.h">
-      <Filter>03. Object\01. Character</Filter>
-    </ClInclude>
     <ClInclude Include="Object\Bullet.h">
       <Filter>03. Object\02. Bullet</Filter>
     </ClInclude>
     <ClInclude Include="Object\GuidedBullet.h">
       <Filter>03. Object\02. Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Level\GameLevel.h">
+      <Filter>02. Level</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\GamePlayer.h">
+      <Filter>03. Object\01. Character\01. Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\MainPlayer.h">
+      <Filter>03. Object\01. Character\01. Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Player.h">
+      <Filter>03. Object\01. Character\01. Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Monster.h">
+      <Filter>03. Object\01. Character\02. Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\GameMonster.h">
+      <Filter>03. Object\01. Character\02. Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\MainMonster.h">
+      <Filter>03. Object\01. Character\02. Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Door.h">
+      <Filter>03. Object\03. Door</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -128,13 +128,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="Level\GameLevel.cpp" />
     <ClCompile Include="Level\Level.cpp" />
     <ClCompile Include="Level\LevelManager.cpp" />
     <ClCompile Include="Level\MainLevel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Object\Bullet.cpp" />
     <ClCompile Include="Object\Character.cpp" />
+    <ClCompile Include="Object\Door.cpp" />
+    <ClCompile Include="Object\GameMonster.cpp" />
+    <ClCompile Include="Object\GamePlayer.cpp" />
     <ClCompile Include="Object\GuidedBullet.cpp" />
+    <ClCompile Include="Object\MainMonster.cpp" />
+    <ClCompile Include="Object\MainPlayer.cpp" />
     <ClCompile Include="Object\Monster.cpp" />
     <ClCompile Include="Object\Object.cpp" />
     <ClCompile Include="Object\Player.cpp" />
@@ -143,12 +149,18 @@
   <ItemGroup>
     <ClInclude Include="GameInfo.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="Level\GameLevel.h" />
     <ClInclude Include="Level\Level.h" />
     <ClInclude Include="Level\LevelManager.h" />
     <ClInclude Include="Level\MainLevel.h" />
     <ClInclude Include="Object\Bullet.h" />
     <ClInclude Include="Object\Character.h" />
+    <ClInclude Include="Object\Door.h" />
+    <ClInclude Include="Object\GameMonster.h" />
+    <ClInclude Include="Object\GamePlayer.h" />
     <ClInclude Include="Object\GuidedBullet.h" />
+    <ClInclude Include="Object\MainMonster.h" />
+    <ClInclude Include="Object\MainPlayer.h" />
     <ClInclude Include="Object\Monster.h" />
     <ClInclude Include="Object\Object.h" />
     <ClInclude Include="Object\Player.h" />

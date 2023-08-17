@@ -1,12 +1,12 @@
 #pragma once
-#include "Character.h"
-class CPlayer :
-    public CCharacter
+#include "Player.h"
+class CMainPlayer :
+    public CPlayer
 {
 public:
-	CPlayer();
-	CPlayer(const CPlayer& Obj);
-	virtual ~CPlayer();
+	CMainPlayer();
+	CMainPlayer(const CMainPlayer& Obj);
+	virtual ~CMainPlayer();
 
 public:
 	virtual void Init();
@@ -14,5 +14,6 @@ public:
 	virtual void Update(float DeltaTime);
 	virtual void Collision(float DeltaTime);
 	virtual void Render(HDC hDC);
+	virtual void Collision(CObject* Dest);
 };
 

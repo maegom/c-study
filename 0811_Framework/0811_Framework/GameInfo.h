@@ -8,6 +8,13 @@
 
 #define	SAFE_DELETE(p)	if(p)	{ delete p; p = nullptr; }
 
+enum class EMonsterMoveDir
+{
+	Left = -1,
+	None,
+	Right
+};
+
 struct Resolution
 {
 	int	Width;

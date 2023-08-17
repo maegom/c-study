@@ -1,16 +1,21 @@
 #pragma once
-
-#include "Character.h"
-
-class CMonster :
-    public CCharacter
+#include "Monster.h"
+class CGameMonster :
+    public CMonster
 {
 public:
-	CMonster();
-	CMonster(const CMonster& Obj);
-	virtual ~CMonster();
+	CGameMonster();
+	CGameMonster(const CGameMonster& Obj);
+	virtual ~CGameMonster();
 
 private:
+	EMonsterMoveDir	mDir;
+
+public:
+	void SetDir(EMonsterMoveDir Dir)
+	{
+		mDir = Dir;
+	}
 
 public:
 	virtual void Init();

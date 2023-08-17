@@ -1,5 +1,6 @@
 #include "LevelManager.h"
 #include "MainLevel.h"
+#include "GameLevel.h"
 
 CLevelManager* CLevelManager::mInst = nullptr;
 
@@ -14,7 +15,8 @@ CLevelManager::~CLevelManager()
 
 void CLevelManager::Init()
 {
-	mLevel = new CMainLevel;
+	//mLevel = new CMainLevel;
+	mLevel = new CGameLevel;
 
 	mLevel->Init();
 }
